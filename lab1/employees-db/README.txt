@@ -1,4 +1,4 @@
-<h1>YOU CAN INSTALL THIS YOURSELF</h1>
+YOU CAN INSTALL THIS YOURSELF
 https://dev.mysql.com/doc/employee/en/
 # test_db
 A sample database with an integrated test suite, used to test your applications and database servers
