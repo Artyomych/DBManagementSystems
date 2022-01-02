@@ -50,6 +50,6 @@ for i in range(50): #вывод key-value
     print('key: %s, value: %s' % (i, memc.get(str(i))))
 ```
  
-Документация pymemcache: https://pymemcache.readthedocs.io/en/latest/ 
-Описание pymysql: https://pypi.org/project/PyMySQL/ 
++ Документация pymemcache: https://pymemcache.readthedocs.io/en/latest/ 
++ Описание pymysql: https://pypi.org/project/PyMySQL/ 
  
