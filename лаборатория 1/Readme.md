@@ -18,7 +18,7 @@ Memcache предоставляет 5 функций:
 from pymemcache.client import base
 memc = base.Client(('localhost', 11211)) #коннект к Memcached
 memc.set('key','value') #установка key-value
-print(connect.get('key')) #вывод значения по ключу
+print(memc.get('key')) #вывод значения по ключу
 memc.delete('key') #удаление ключа
 ```
 
