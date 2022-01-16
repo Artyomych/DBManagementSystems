@@ -64,9 +64,15 @@ WHERE ee.name = 'Emil' RETURN ee, friends
 Python и Neo4j  
 + Драйвер Neo4j для python: https://pypi.org/project/neo4j/ 
 
+### Пример задания
+Задание: создать сервис, использующий таблицы actor, film_actor, film для составления графа фильмов и актёров, сыгравших в них.  
+Тип узла: ```Actor```    
+Атрибуты: ```name```  
+Тип узла: ```Film```  
+Атрибуты: ```title```   
+Связи: ```STAR_IN``` (снимался в)  
 
-
-### Пример:
+### Пример выполнения задания на языке Python 3.10:
 ```python
 from neo4j import GraphDatabase
 import pymysql
