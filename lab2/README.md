@@ -14,10 +14,10 @@ Create a node
 ```cypher
 CREATE (ee:Person {name: 'Emil', from: 'Sweden', kloutScore: 99})  
 ```
-• CREATE creates the node.
-• () indicates the node.
-• ee:Person – ee is the node variable andPerson is the node label.
-• {} contains the properties that describe the node.
+• CREATE creates the node.  
+• () indicates the node.  
+• ee:Person – ee is the node variable andPerson is the node label.  
+• {} contains the properties that describe the node.  
 
 #### MATCH
 Find nodes  
