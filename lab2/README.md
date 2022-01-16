@@ -133,3 +133,6 @@ except pymysql.err.OperationalError as e:
     print("Error %d: %s" % (e.args[0], e.args[1]))
     sys.exit (1)
 ```
+
+### Результат в Neo4j
+![Результат выполнения кода](https://github.com/Artyomych/DBManagementSystems/blob/main/lab2/lab2_graph_scheme.png)
