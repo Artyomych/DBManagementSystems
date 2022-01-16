@@ -45,10 +45,10 @@ Then run
 
     mysql < employees.sql
     mysql < load_departments.sql
-    mysql < load_dept_emp.sql
-    mysql < load_dept_manager.sql
     mysql < load_employees.sql
     mysql < load_titles.sql
+    mysql < load_dept_emp.sql
+    mysql < load_dept_manager.sql
     mysql < load_salaries1.sql
     mysql < load_salaries2.sql
     mysql < load_salaries3.sql
