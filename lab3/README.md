@@ -513,7 +513,8 @@ except pymysql.err.OperationalError as e:
 >db.films.updateMany({},{$set:{price:100}})
 
 Выведем объекты от 1 до 9  
->db.films.find({$and: [{film_id:{$gt:0}}, {film_id:{$lt:10}}]}).pretty()  
+>db.films.find({$and: [{film_id:{$gt:0}}, {film_id:{$lt:10}}]}).pretty()   
+
 Получим  
 ```json
 {
@@ -643,4 +644,17 @@ except pymysql.err.OperationalError as e:
     "_id" : "Max_price_G_rating", 
     "max_price" : 100 
 }
+```
+
+#### Пример 4
+Найдем суммарную стоимость фильмов по рейтингам
+> db.films.aggregate([{$group:{_id:"$rating","total_price":{$sum:"$price"}}}])
+
+Результат:
+```json
+{ "_id" : "PG", "total_price" : 19400 }
+{ "_id" : "G", "total_price" : 17800 }
+{ "_id" : "R", "total_price" : 19500 }
+{ "_id" : "PG-13", "total_price" : 22300 }
+{ "_id" : "NC-17", "total_price" : 21000 }
 ```
