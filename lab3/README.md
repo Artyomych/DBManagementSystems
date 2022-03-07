@@ -658,3 +658,48 @@ except pymysql.err.OperationalError as e:
 { "_id" : "PG-13", "total_price" : 22300 }
 { "_id" : "NC-17", "total_price" : 21000 }
 ```
+
+#### Пример 5
+Создадим поле и заполним случайными значениями с помощью Python
+```python
+from pymongo import MongoClient
+import pymysql
+import sys
+import random
+
+#Step 1: Connect to MongoDB - Note: Change connection string as needed
+client = MongoClient(port=27017)
+db=client.sakila
+try:
+    con = pymysql.connect(host='localhost', #коннект к MySQL
+                          user='root',
+                          password='',
+                          database='sakila')
+    cursor = con.cursor()
+    # Step 2: Create sample data
+    cursor.execute('SELECT film_id,title,description,rating FROM film')#выполнение запроса
+    rows = cursor.fetchall()#сохранение записей
+    for row in rows:
+        film = {
+            'film_id': row[0],
+            'title': row[1],
+            'description': row[2],
+            'rating': row[3]
+        }
+        # Step 3: Insert sakila.films object directly into MongoDB via insert_one
+        result = db.films.insert_one(film)
+        db.films.update_one({'film_id': row[0]}, {'$set': {'price': random.randint(0, 100)}})
+        # Step 4: Print to the console the ObjectID of the new document
+        print('Created film {0} with inserted id: {1}'.format(row[1], result.inserted_id))
+    #Print all films (db.films.deleteMany({}) - remove all objects from collection)
+    data = db.films.find()
+    print(data)
+    for row in data:
+        print(row)
+
+
+except pymysql.err.OperationalError as e:
+    print("Error reading data from MySQL table", e)
+    print("Error %d: %s" % (e.args[0], e.args[1]))
+    sys.exit(1)
+```
