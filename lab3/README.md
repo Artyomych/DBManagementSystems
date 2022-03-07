@@ -705,6 +705,6 @@ except pymysql.err.OperationalError as e:
 ```
 
 #### Пример 6
-То же самое в консоли
+То же самое в консоли    
 Инфа про forEach: https://docs.mongodb.com/manual/reference/method/cursor.forEach/
 >db.films.find().forEach(function(film) {db.films.update({_id: film._id}, {$set: {price: Math.floor(Math.random() * (100))}});})
