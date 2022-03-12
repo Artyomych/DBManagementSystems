@@ -708,3 +708,6 @@ except pymysql.err.OperationalError as e:
 То же самое в консоли    
 Инфа про forEach: https://docs.mongodb.com/manual/reference/method/cursor.forEach/
 >db.films.find().forEach(function(film) {db.films.update({_id: film._id}, {$set: {price: Math.floor(Math.random() * (100))}});})
+
+Для диапазона [min,max]: 
+>Math.floor(Math.random() * (max - min)) + min;
