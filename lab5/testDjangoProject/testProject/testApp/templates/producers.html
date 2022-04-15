@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Производители</title>
+</head>
+
+<body>
+    {%block content%}
+
+    <h1>Все производители</h1>
+
+    <table class="table">
+        <tr>
+            <td>ID производителя</td>
+            <td>Название</td>
+
+        </tr>
+        {% for producers in all_producers %}
+        <tr>
+            <td>{{producers.pk}}</td>
+            <!--pk (primary key) аналог id-->
+            <td>{{producers.name}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <h1>Добавление производителя</h1>
+    <div id="">
+        <form action='' method='POST'>
+            {% csrf_token %}
+            <!--{{form_in_hosp.as_p}}-->
+            {% for field in add_form %}
+            <p id='none'>
+                <label for="">{{field.label}}</label>
+                <span>{{field}}</span>
+            </p>
+            {% endfor %}
+            <input type='submit' class='' value='Добавить' id='button_for_add'>
+        </form>
+    </div>
+
+    {%endblock%}
+</body>
+
+</html>
