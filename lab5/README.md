@@ -8,6 +8,7 @@
 > python -m venv ENVIRONMENT_NAME
 4) Активировать виртуальное окружение
 > Путь: ENVIRONMENT_NAME/Scripts/activate - Windows
+
 > source ENVIRONMENT_NAME/bin/activate - Linux
 
 Пример активации среды (в скобках указано название среды):
